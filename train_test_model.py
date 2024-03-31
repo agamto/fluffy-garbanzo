@@ -1,7 +1,7 @@
 from lstm_model import VanillaLSTM
 import torch.nn as nn
 import torch
-def train_model(device,data_train,lables,modelType='v-lstm',epoches=5,lost_function=nn.MSELoss,optimizer='adam',learning_rate=0.01,path_to_save='./'):
+def train_model(data_train,lables,modelType='v-lstm',epoches=5,lost_function=nn.MSELoss(),optimizer='adam',learning_rate=0.01,path_to_save='./',device='cpu'):
 
     if modelType == 'v-lstm':
         model = VanillaLSTM(len(data_train[0]),len(data_train)).to(device)
